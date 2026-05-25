@@ -1,92 +1,162 @@
+// ===============================
 // VARIABLES
+// ===============================
 
-let calories = 1840;
+let calories = 1800;
 let water = 2;
+
 let currentWeight = 92;
+
 const initialWeight = 92;
 const goalWeight = 75;
 
 
+// ===============================
 // ELEMENTOS
+// ===============================
 
-const caloriesValue = document.getElementById("caloriesValue");
-const waterValue = document.getElementById("waterValue");
-const currentWeightText = document.getElementById("currentWeight");
-const progressBar = document.getElementById("progressBar");
+const startBtn =
+document.getElementById("startBtn");
 
-const mealInput = document.getElementById("mealInput");
-const mealList = document.getElementById("mealList");
+const loginBtn =
+document.getElementById("loginBtn");
 
-const chatBox = document.getElementById("chatBox");
-const userQuestion = document.getElementById("userQuestion");
+const darkModeBtn =
+document.getElementById("darkModeBtn");
 
-const startBtn = document.getElementById("startBtn");
+const updateWeightBtn =
+document.getElementById("updateWeightBtn");
+
+const addWaterBtn =
+document.getElementById("addWaterBtn");
+
+const resetCaloriesBtn =
+document.getElementById("resetCaloriesBtn");
+
+const saveMealBtn =
+document.getElementById("saveMealBtn");
+
+const sendQuestionBtn =
+document.getElementById("sendQuestionBtn");
+
+const caloriesValue =
+document.getElementById("caloriesValue");
+
+const waterValue =
+document.getElementById("waterValue");
+
+const currentWeightText =
+document.getElementById("currentWeight");
+
+const progressBar =
+document.getElementById("progressBar");
+
+const mealInput =
+document.getElementById("mealInput");
+
+const mealList =
+document.getElementById("mealList");
+
+const userQuestion =
+document.getElementById("userQuestion");
+
+const chatBox =
+document.getElementById("chatBox");
+
+
+// ===============================
+// BANCO DE COMIDAS
+// ===============================
+
+const foodsDatabase = {
+
+    "pollo":300,
+    "arroz":250,
+    "huevo":80,
+    "avena":150,
+    "pizza":400,
+    "hamburguesa":550,
+    "pan":120,
+    "atun":200,
+    "carne":350,
+    "papas":280,
+    "pasta":320,
+    "banana":100,
+    "manzana":90,
+    "cafe":20,
+    "ensalada":100
+
+};
+
+
+// ===============================
+// BOTON EMPEZAR
+// ===============================
 
 startBtn.addEventListener("click", () => {
 
     alert("Bienvenido a FitLife AI 🔥");
 
 });
-// LOGIN
 
-document.getElementById("loginBtn")
-.addEventListener("click", () => {
+
+// ===============================
+// LOGIN
+// ===============================
+
+loginBtn.addEventListener("click", () => {
 
     alert("Sistema Login próximamente 🔐");
 
 });
 
 
+// ===============================
 // DARK MODE
+// ===============================
 
-document.getElementById("darkModeBtn")
-.addEventListener("click", () => {
+darkModeBtn.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
 });
 
 
-// EMPEZAR
-
-document.getElementById("startBtn")
-.addEventListener("click", () => {
-
-    window.scrollTo({
-        top:500,
-        behavior:"smooth"
-    });
-
-});
-
-
+// ===============================
 // ACTUALIZAR PESO
+// ===============================
 
-document.getElementById("updateWeightBtn")
-.addEventListener("click", () => {
+updateWeightBtn.addEventListener("click", () => {
 
-    const newWeight = prompt("Ingresa tu nuevo peso:");
+    const newWeight =
+    prompt("Ingresa tu nuevo peso");
 
-    if(newWeight){
+    if(!newWeight) return;
 
-        currentWeight = parseInt(newWeight);
+    currentWeight =
+    parseInt(newWeight);
 
-        currentWeightText.innerText = currentWeight + " kg";
+    currentWeightText.innerText =
+    currentWeight + " kg";
 
-        updateProgress();
-
-    }
+    updateProgress();
 
 });
 
 
+// ===============================
 // FUNCION PROGRESO
+// ===============================
 
 function updateProgress(){
 
     let percentage =
-    ((initialWeight - currentWeight) /
-    (initialWeight - goalWeight)) * 100;
+
+    ((initialWeight - currentWeight)
+    /
+    (initialWeight - goalWeight))
+
+    * 100;
 
     if(percentage < 0){
         percentage = 0;
@@ -96,85 +166,45 @@ function updateProgress(){
         percentage = 100;
     }
 
-    progressBar.style.width = percentage + "%";
+    progressBar.style.width =
+    percentage + "%";
 
 }
 
 
-// AGREGAR CALORIAS
-
-document.getElementById("addCaloriesBtn")
-.addEventListener("click", () => {
-
-    const amount = prompt("¿Cuántas calorías agregar?");
-
-    if(amount){
-
-        calories += parseInt(amount);
-
-        caloriesValue.innerText = calories;
-
-    }
-
-});
-
-
+// ===============================
 // AGREGAR AGUA
+// ===============================
 
-document.getElementById("addWaterBtn")
-.addEventListener("click", () => {
+addWaterBtn.addEventListener("click", () => {
 
     water++;
 
-    waterValue.innerText = water + "L";
+    waterValue.innerText =
+    water + "L";
 
 });
 
 
-// CALORIAS INICIALES
+// ===============================
+// REINICIAR CALORIAS
+// ===============================
 
-let calories = 1800;
+resetCaloriesBtn.addEventListener("click", () => {
 
+    calories = 0;
 
-// ELEMENTOS
+    caloriesValue.innerText =
+    calories;
 
-const caloriesValue =
-document.getElementById("caloriesValue");
-
-const mealInput =
-document.getElementById("mealInput");
-
-const mealList =
-document.getElementById("mealList");
+});
 
 
-// BASE DE DATOS SIMPLE DE COMIDAS
-
-const foodsDatabase = {
-
-    "pollo": 300,
-    "arroz": 250,
-    "huevo": 80,
-    "avena": 150,
-    "pan": 120,
-    "pizza": 400,
-    "hamburguesa": 550,
-    "manzana": 90,
-    "banana": 110,
-    "atun": 200,
-    "carne": 350,
-    "pasta": 320,
-    "ensalada": 100,
-    "papas": 280,
-    "cafe": 20
-
-};
-
-
+// ===============================
 // GUARDAR COMIDA
+// ===============================
 
-document.getElementById("saveMealBtn")
-.addEventListener("click", () => {
+saveMealBtn.addEventListener("click", () => {
 
     const meal =
     mealInput.value.toLowerCase();
@@ -187,13 +217,10 @@ document.getElementById("saveMealBtn")
 
     }
 
-
-    // CALORIAS DETECTADAS
-
     let detectedCalories = 0;
 
 
-    // BUSCAR PALABRAS
+    // DETECTAR COMIDAS
 
     for(let food in foodsDatabase){
 
@@ -220,7 +247,8 @@ document.getElementById("saveMealBtn")
 
     calories += detectedCalories;
 
-    caloriesValue.innerText = calories;
+    caloriesValue.innerText =
+    calories;
 
 
     // CREAR ELEMENTO
@@ -236,70 +264,27 @@ document.getElementById("saveMealBtn")
 
     mealList.appendChild(li);
 
-
-    // LIMPIAR INPUT
-
     mealInput.value = "";
 
 });
 
-// IA SIMPLE
 
-function generateAIResponse(question){
+// ===============================
+// GEMINI IA
+// ===============================
 
-    question = question.toLowerCase();
+sendQuestionBtn.addEventListener("click", async () => {
 
-    if(question.includes("grasa")){
+    const question =
+    userQuestion.value;
 
-        return "Para perder grasa necesitas déficit calórico 💪";
+    if(question === "") return;
 
-    }
-
-    if(question.includes("proteina")){
-
-        return "Consume huevos, pollo y proteína whey 🍗";
-
-    }
-
-    if(question.includes("agua")){
-
-        return "Debes consumir mínimo 2 litros diarios 💧";
-
-    }
-
-    if(question.includes("desayuno")){
-
-        return "Un desayuno ideal es avena con huevos 🍎";
-
-    }
-
-    if(question.includes("musculo")){
-
-        return "Entrena fuerza y aumenta proteína 🔥";
-
-    }
-
-    return "Sigue entrenando y mantén disciplina 🔥";
-
-}
-
-
-// ENVIAR MENSAJE
-
-document.getElementById("sendQuestionBtn")
-.addEventListener("click", () => {
-
-    const question = userQuestion.value;
-
-    if(question === ""){
-
-        return;
-
-    }
 
     // MENSAJE USUARIO
 
-    const userDiv = document.createElement("div");
+    const userDiv =
+    document.createElement("div");
 
     userDiv.classList.add("user-message");
 
@@ -310,47 +295,121 @@ document.getElementById("sendQuestionBtn")
 
     // MENSAJE IA
 
-    const aiDiv = document.createElement("div");
+    const aiDiv =
+    document.createElement("div");
 
     aiDiv.classList.add("ai-message");
 
-    aiDiv.innerText = "Escribiendo...";
+    aiDiv.innerText = "Pensando...";
 
     chatBox.appendChild(aiDiv);
 
-    chatBox.scrollTop = chatBox.scrollHeight;
+    chatBox.scrollTop =
+    chatBox.scrollHeight;
 
 
-    setTimeout(() => {
+    try{
+
+        const response =
+        await fetch(
+
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=TU_API_KEY",
+
+        {
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+
+                contents:[
+
+                    {
+
+                        parts:[
+
+                            {
+
+                                text:
+                                `
+                                Eres un coach fitness profesional.
+
+                                Responde corto,
+                                claro y útil.
+
+                                Usuario:
+                                ${question}
+                                `
+
+                            }
+
+                        ]
+
+                    }
+
+                ]
+
+            })
+
+        }
+
+        );
+
+
+        const data =
+        await response.json();
+
+
+        const aiText =
+        data.candidates[0]
+        .content.parts[0]
+        .text;
+
 
         aiDiv.innerText =
-        generateAIResponse(question);
+        aiText;
 
-        chatBox.scrollTop =
-        chatBox.scrollHeight;
 
-    }, 1000);
+    }catch(error){
+
+        aiDiv.innerText =
+        "Error conectando con Gemini ❌";
+
+        console.log(error);
+
+    }
+
 
     userQuestion.value = "";
+
+    chatBox.scrollTop =
+    chatBox.scrollHeight;
 
 });
 
 
+// ===============================
 // ENTER PARA ENVIAR
+// ===============================
 
 userQuestion.addEventListener("keypress", (e) => {
 
     if(e.key === "Enter"){
 
-        document
-        .getElementById("sendQuestionBtn")
-        .click();
+        sendQuestionBtn.click();
 
     }
 
 });
 
 
+// ===============================
 // INICIAR
+// ===============================
 
 updateProgress();
+
+console.log("FitLife AI cargado correctamente 🔥");
