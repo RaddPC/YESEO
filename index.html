@@ -1,57 +1,190 @@
 <!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitLife AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <h1 class="logo">FitLife AI</h1>
+
+        <div class="nav-buttons">
+
+            <button id="loginBtn">
+                Login
+            </button>
+
+            <button id="darkModeBtn">
+                🌙
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h2>
+            Tu nutricionista con IA
+        </h2>
+
+        <p>
+            Controla peso, calorías y comidas con inteligencia artificial.
+        </p>
+
+        <button id="startBtn">
+            Empezar
+        </button>
+
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+
+        <!-- PESO -->
+
+        <div class="card">
+
+            <h3>🔥 Progreso</h3>
+
+            <div class="progress-container">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+            <div class="weight-info">
+
+                <span id="currentWeight">
+                    92 kg
+                </span>
+
+                <span>
+                    Meta: 75 kg
+                </span>
+
+            </div>
+
+            <button id="updateWeightBtn">
+                Actualizar Peso
+            </button>
+
+        </div>
+
+        <!-- CALORIAS -->
+
+        <div class="card">
+
+            <h3>🍎 Calorías</h3>
+
+            <div class="big-number" id="caloriesValue">
+                1840
+            </div>
+
+            <p>
+                Consumidas hoy
+            </p>
+
+            <button id="addCaloriesBtn">
+                Agregar Calorías
+            </button>
+
+        </div>
+
+        <!-- AGUA -->
+
+        <div class="card">
+
+            <h3>💧 Agua</h3>
+
+            <div class="big-number" id="waterValue">
+                2L
+            </div>
+
+            <p>
+                Agua consumida hoy
+            </p>
+
+            <button id="addWaterBtn">
+                Agregar Agua
             </button>
 
         </div>
 
     </section>
 
+    <!-- COMIDAS -->
 
-    <!-- ESTADISTICAS -->
-
-    <section class="stats-section">
+    <section class="meals-section">
 
         <h2>
-            Estadísticas
+            Registro de comidas
         </h2>
 
-        <div class="stats-grid">
+        <div class="meal-form">
 
-            <div class="stat-card">
+            <input
+                type="text"
+                id="mealInput"
+                placeholder="Ejemplo: Pollo con arroz"
+            >
 
-                <h3 id="lostKg">
-                    12
-                </h3>
+            <button id="saveMealBtn">
+                Guardar
+            </button>
 
-                <p>Kg Perdidos</p>
+        </div>
 
-            </div>
+        <ul id="mealList"></ul>
 
+    </section>
 
-            <div class="stat-card">
+    <!-- IA -->
 
-                <h3 id="daysActive">
-                    45
-                </h3>
+    <section class="ai-section">
 
-                <p>Días Activo</p>
+        <h2>
+            🤖 Coach IA
+        </h2>
 
-            </div>
+        <div class="chat-box" id="chatBox">
 
-
-            <div class="stat-card">
-
-                <h3>
-                    87%
-                </h3>
-
-                <p>Objetivo</p>
-
+            <div class="ai-message">
+                Hola 👋 Soy tu coach fitness.
             </div>
 
         </div>
 
-    </section>
+        <div class="chat-input-container">
 
+            <input
+                type="text"
+                id="userQuestion"
+                placeholder="Pregúntale algo a la IA"
+            >
+
+            <button id="sendQuestionBtn">
+                Enviar
+            </button>
+
+        </div>
+
+    </section>
 
     <!-- FOOTER -->
 
@@ -62,13 +195,13 @@
         </h2>
 
         <p>
-            Proyecto fitness moderno con inteligencia artificial.
+            Proyecto fitness moderno con IA.
         </p>
 
     </footer>
 
-
     <script src="script.js"></script>
 
 </body>
+
 </html>
