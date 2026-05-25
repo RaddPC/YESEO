@@ -131,12 +131,53 @@ document.getElementById("addWaterBtn")
 });
 
 
+// CALORIAS INICIALES
+
+let calories = 1800;
+
+
+// ELEMENTOS
+
+const caloriesValue =
+document.getElementById("caloriesValue");
+
+const mealInput =
+document.getElementById("mealInput");
+
+const mealList =
+document.getElementById("mealList");
+
+
+// BASE DE DATOS SIMPLE DE COMIDAS
+
+const foodsDatabase = {
+
+    "pollo": 300,
+    "arroz": 250,
+    "huevo": 80,
+    "avena": 150,
+    "pan": 120,
+    "pizza": 400,
+    "hamburguesa": 550,
+    "manzana": 90,
+    "banana": 110,
+    "atun": 200,
+    "carne": 350,
+    "pasta": 320,
+    "ensalada": 100,
+    "papas": 280,
+    "cafe": 20
+
+};
+
+
 // GUARDAR COMIDA
 
 document.getElementById("saveMealBtn")
 .addEventListener("click", () => {
 
-    const meal = mealInput.value;
+    const meal =
+    mealInput.value.toLowerCase();
 
     if(meal === ""){
 
@@ -146,18 +187,61 @@ document.getElementById("saveMealBtn")
 
     }
 
-    const li = document.createElement("li");
+
+    // CALORIAS DETECTADAS
+
+    let detectedCalories = 0;
+
+
+    // BUSCAR PALABRAS
+
+    for(let food in foodsDatabase){
+
+        if(meal.includes(food)){
+
+            detectedCalories +=
+            foodsDatabase[food];
+
+        }
+
+    }
+
+
+    // SI NO DETECTA
+
+    if(detectedCalories === 0){
+
+        detectedCalories = 150;
+
+    }
+
+
+    // SUMAR CALORIAS
+
+    calories += detectedCalories;
+
+    caloriesValue.innerText = calories;
+
+
+    // CREAR ELEMENTO
+
+    const li =
+    document.createElement("li");
 
     li.innerHTML = `
         🍽️ ${meal}
+        <br>
+        🔥 ${detectedCalories} calorías
     `;
 
     mealList.appendChild(li);
 
+
+    // LIMPIAR INPUT
+
     mealInput.value = "";
 
 });
-
 
 // IA SIMPLE
 
