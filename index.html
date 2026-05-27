@@ -4,11 +4,25 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FitLife AI</title>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Q?Fit</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -18,9 +32,17 @@
 
     <nav class="navbar">
 
-        <h1 class="logo">
-            FitLife AI
-        </h1>
+        <div class="logo-container">
+
+            <h1 class="logo">
+                Q?Fit
+            </h1>
+
+            <span class="logo-badge">
+                Premium
+            </span>
+
+        </div>
 
         <div class="nav-buttons">
 
@@ -40,17 +62,64 @@
 
     <section class="hero">
 
-        <h2>
-            Tu nutricionista con IA
-        </h2>
+        <div class="hero-content">
 
-        <p>
-            Controla comidas, calorías y recibe consejos inteligentes.
-        </p>
+            <h2>
+                Tu Coach Fitness Inteligente
+            </h2>
 
-        <button id="startBtn">
-            Empezar
-        </button>
+            <p>
+                Controla calorías, agua, peso y retos fitness
+                con una experiencia premium estilo Apple.
+            </p>
+
+            <button id="startBtn">
+                Comenzar
+            </button>
+
+        </div>
+
+        <!-- HERO STATS -->
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+
+                <h3 id="heroWeight">
+                    92kg
+                </h3>
+
+                <span>
+                    Peso Actual
+                </span>
+
+            </div>
+
+            <div class="hero-stat">
+
+                <h3 id="heroCalories">
+                    1800
+                </h3>
+
+                <span>
+                    Calorías
+                </span>
+
+            </div>
+
+            <div class="hero-stat">
+
+                <h3 id="heroWater">
+                    2L
+                </h3>
+
+                <span>
+                    Agua
+                </span>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -60,7 +129,7 @@
 
         <!-- PROGRESO -->
 
-        <div class="card">
+        <div class="card fade-up">
 
             <h3>
                 🔥 Progreso
@@ -92,14 +161,17 @@
 
         <!-- CALORIAS -->
 
-        <div class="card">
+        <div class="card fade-up">
 
             <h3>
                 🍎 Calorías
             </h3>
 
-            <div class="big-number" id="caloriesValue">
+            <div class="big-number"
+            id="caloriesValue">
+
                 1800
+
             </div>
 
             <p>
@@ -114,39 +186,87 @@
 
         <!-- AGUA -->
 
-        <div class="card">
+        <div class="card fade-up">
 
             <h3>
                 💧 Agua
             </h3>
 
-           <!-- AGUA -->
+            <div class="water-circle">
 
-<div class="card">
+                <div class="water-fill"
+                id="waterFill"></div>
 
-    <h3>
-        💧 Agua
-    </h3>
+                <div class="water-text"
+                id="waterValue">
 
-    <div class="big-number" id="waterValue">
-        2L
-    </div>
+                    2L
 
-    <p>
-        Consumo diario
-    </p>
+                </div>
 
-    <input
-        type="number"
-        id="waterInput"
-        placeholder="Ejemplo: 3"
-    >
+            </div>
 
-    <button id="updateWaterBtn">
-        Actualizar Agua
-    </button>
+            <input
+                type="number"
+                id="waterInput"
+                placeholder="Litros consumidos"
+            >
 
-</div>
+            <button id="updateWaterBtn">
+                Actualizar Agua
+            </button>
+
+        </div>
+
+        <!-- ESTADISTICAS -->
+
+        <div class="card fade-up">
+
+            <h3>
+                📊 Estadísticas
+            </h3>
+
+            <div class="stats-box">
+
+                <div class="stat-item">
+
+                    <span>
+                        Comidas
+                    </span>
+
+                    <strong id="mealsCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-item">
+
+                    <span>
+                        Retos
+                    </span>
+
+                    <strong id="completedChallenges">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-item">
+
+                    <span>
+                        Agua
+                    </span>
+
+                    <strong id="waterPercent">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -176,50 +296,50 @@
 
     </section>
 
-  <!-- RETO FITNESS -->
+    <!-- RETO FITNESS -->
 
-<section class="challenge-section">
+    <section class="challenge-section">
 
-    <h2>
-        🏆 Reto Fitness del Día
-    </h2>
+        <div class="challenge-card">
 
-    <div class="challenge-card">
+            <h2>
+                🏆 Reto Fitness
+            </h2>
 
-        <h3 id="challengeText">
-            Cargando reto...
-        </h3>
+            <h3 id="challengeText">
+                Cargando...
+            </h3>
 
-        <p id="challengeStatus">
-            Pendiente ❌
-        </p>
+            <p id="challengeStatus">
+                Pendiente ❌
+            </p>
 
-        <div class="challenge-buttons">
+            <div class="challenge-buttons">
 
-            <button id="completeChallengeBtn">
-                Completar
-            </button>
+                <button id="completeChallengeBtn">
+                    Completar
+                </button>
 
-            <button id="newChallengeBtn">
-                Nuevo Reto
-            </button>
+                <button id="newChallengeBtn">
+                    Nuevo
+                </button>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
     <!-- FOOTER -->
 
     <footer>
 
         <h2>
-            FitLife AI
+            Q?Fit
         </h2>
 
         <p>
-            Proyecto fitness moderno con inteligencia artificial.
+            Premium Fitness Experience
         </p>
 
     </footer>
