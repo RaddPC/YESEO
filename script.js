@@ -1,48 +1,35 @@
-// ===============================
-// VARIABLES
-// ===============================
-
 let calories = 1800;
 let water = 2;
 let currentWeight = 92;
 
+let mealsCount = 0;
+let completedChallenges = 0;
+
 const initialWeight = 92;
 const goalWeight = 75;
 
+const foodsDatabase = {
 
-// ===============================
-// ELEMENTOS
-// ===============================
+    "pollo":300,
+    "arroz":250,
+    "huevo":80,
+    "pizza":400,
+    "hamburguesa":550,
+    "arepa":200,
+    "ensalada":100,
+    "salmon":350
 
-const startBtn =
-document.getElementById("startBtn");
+};
 
-const loginBtn =
-document.getElementById("loginBtn");
+const fitnessChallenges = [
 
-const darkModeBtn =
-document.getElementById("darkModeBtn");
+    "🔥 Camina 5.000 pasos",
+    "💧 Toma 3 litros de agua",
+    "🏋️ Entrena 30 minutos",
+    "🥗 Come saludable hoy",
+    "💪 Haz 20 flexiones"
 
-const updateWeightBtn =
-document.getElementById("updateWeightBtn");
-
-const updateWaterBtn =
-document.getElementById("updateWaterBtn");
-
-const waterInput =
-document.getElementById("waterInput");
-
-const resetCaloriesBtn =
-document.getElementById("resetCaloriesBtn");
-
-const saveMealBtn =
-document.getElementById("saveMealBtn");
-
-const completeChallengeBtn =
-document.getElementById("completeChallengeBtn");
-
-const newChallengeBtn =
-document.getElementById("newChallengeBtn");
+];
 
 const caloriesValue =
 document.getElementById("caloriesValue");
@@ -56,6 +43,9 @@ document.getElementById("currentWeight");
 const progressBar =
 document.getElementById("progressBar");
 
+const waterFill =
+document.getElementById("waterFill");
+
 const mealInput =
 document.getElementById("mealInput");
 
@@ -68,98 +58,62 @@ document.getElementById("challengeText");
 const challengeStatus =
 document.getElementById("challengeStatus");
 
+/* HERO */
 
-// ===============================
-// BASE DE DATOS DE COMIDAS
-// ===============================
+const heroCalories =
+document.getElementById("heroCalories");
 
-const foodsDatabase = {
+const heroWater =
+document.getElementById("heroWater");
 
-    "pollo":300,
-    "arroz":250,
-    "huevo":80,
-    "avena":150,
-    "pizza":400,
-    "hamburguesa":550,
-    "pan":120,
-    "atun":200,
-    "carne":350,
-    "papas":280,
-    "pasta":320,
-    "banana":100,
-    "manzana":90,
-    "cafe":20,
-    "ensalada":100,
-    "salmon":350,
-    "yogurt":120,
-    "queso":200,
-    "frijoles":180,
-    "arepa":200
+const heroWeight =
+document.getElementById("heroWeight");
 
-};
+/* STATS */
 
+const mealsCountText =
+document.getElementById("mealsCount");
 
-// ===============================
-// RETOS FITNESS
-// ===============================
+const completedChallengesText =
+document.getElementById("completedChallenges");
 
-const fitnessChallenges = [
+const waterPercent =
+document.getElementById("waterPercent");
 
-    "🔥 Camina 5.000 pasos hoy",
-    "💧 Toma 3 litros de agua",
-    "🥗 Come una comida saludable",
-    "🏋️ Haz 30 minutos de ejercicio",
-    "🚶 Camina después de almorzar",
-    "🍎 Evita comida chatarra hoy",
-    "😴 Duerme mínimo 8 horas",
-    "💪 Haz 20 flexiones",
-    "🚴 Haz cardio por 15 minutos",
-    "🧘 Relájate y reduce estrés"
+/* BUTTONS */
 
-];
-
-
-// ===============================
-// BOTON EMPEZAR
-// ===============================
-
-startBtn.addEventListener("click", () => {
-
-    alert("Bienvenido a FitLife AI 🔥");
-
-});
-
-
-// ===============================
-// LOGIN
-// ===============================
-
-loginBtn.addEventListener("click", () => {
-
-    alert("Sistema Login próximamente 🔐");
-
-});
-
-
-// ===============================
-// DARK MODE
-// ===============================
-
-darkModeBtn.addEventListener("click", () => {
+document
+.getElementById("darkModeBtn")
+.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
 });
 
+document
+.getElementById("startBtn")
+.addEventListener("click", () => {
 
-// ===============================
-// ACTUALIZAR PESO
-// ===============================
+    alert("🔥 Bienvenido a FitLife AI");
 
-updateWeightBtn.addEventListener("click", () => {
+});
+
+document
+.getElementById("loginBtn")
+.addEventListener("click", () => {
+
+    alert("🔐 Login próximamente");
+
+});
+
+/* PESO */
+
+document
+.getElementById("updateWeightBtn")
+.addEventListener("click", () => {
 
     const newWeight =
-    prompt("Ingresa tu nuevo peso");
+    prompt("Nuevo peso:");
 
     if(!newWeight) return;
 
@@ -169,14 +123,14 @@ updateWeightBtn.addEventListener("click", () => {
     currentWeightText.innerText =
     currentWeight + " kg";
 
+    heroWeight.innerText =
+    currentWeight + "kg";
+
     updateProgress();
 
 });
 
-
-// ===============================
-// FUNCION PROGRESO
-// ===============================
+/* PROGRESO */
 
 function updateProgress(){
 
@@ -185,7 +139,6 @@ function updateProgress(){
     ((initialWeight - currentWeight)
     /
     (initialWeight - goalWeight))
-
     * 100;
 
     if(percentage < 0){
@@ -201,69 +154,74 @@ function updateProgress(){
 
 }
 
+/* AGUA */
 
-// ===============================
-// AGREGAR AGUA
-// ===============================
-// ACTUALIZAR AGUA
-// ===============================
+document
+.getElementById("updateWaterBtn")
+.addEventListener("click", () => {
 
-updateWaterBtn.addEventListener("click", () => {
+    const value =
+    document.getElementById("waterInput").value;
 
-    const newWater =
-    waterInput.value;
+    if(value === "") return;
 
-    if(newWater === ""){
-
-        alert("Ingresa una cantidad de agua");
-
-        return;
-
-    }
-
-    water = parseFloat(newWater);
+    water = parseFloat(value);
 
     waterValue.innerText =
     water + "L";
 
-    waterInput.value = "";
+    heroWater.innerText =
+    water + "L";
+
+    updateWaterVisual();
 
 });
-// ===============================
-// REINICIAR CALORIAS
-// ===============================
 
-resetCaloriesBtn.addEventListener("click", () => {
+function updateWaterVisual(){
+
+    let percentage =
+    (water / 4) * 100;
+
+    if(percentage > 100){
+        percentage = 100;
+    }
+
+    waterFill.style.height =
+    percentage + "%";
+
+    waterPercent.innerText =
+    Math.floor(percentage) + "%";
+
+}
+
+/* CALORIAS */
+
+document
+.getElementById("resetCaloriesBtn")
+.addEventListener("click", () => {
 
     calories = 0;
 
     caloriesValue.innerText =
     calories;
 
+    heroCalories.innerText =
+    calories;
+
 });
 
+/* COMIDAS */
 
-// ===============================
-// GUARDAR COMIDA
-// ===============================
-
-saveMealBtn.addEventListener("click", () => {
+document
+.getElementById("saveMealBtn")
+.addEventListener("click", () => {
 
     const meal =
     mealInput.value.toLowerCase();
 
-    if(meal === ""){
-
-        alert("Escribe una comida");
-
-        return;
-
-    }
+    if(meal === "") return;
 
     let detectedCalories = 0;
-
-
-    // DETECTAR COMIDAS
 
     for(let food in foodsDatabase){
 
@@ -276,48 +234,43 @@ saveMealBtn.addEventListener("click", () => {
 
     }
 
-
-    // SI NO DETECTA
-
     if(detectedCalories === 0){
 
         detectedCalories = 150;
 
     }
 
-
-    // SUMAR CALORIAS
-
     calories += detectedCalories;
+
+    mealsCount++;
 
     caloriesValue.innerText =
     calories;
 
+    heroCalories.innerText =
+    calories;
 
-    // CREAR ELEMENTO
+    mealsCountText.innerText =
+    mealsCount;
 
     const li =
     document.createElement("li");
 
     li.innerHTML = `
+
         🍽️ ${meal}
-        <br>
+        <br><br>
         🔥 ${detectedCalories} calorías
+
     `;
 
     mealList.appendChild(li);
-
-
-    // LIMPIAR INPUT
 
     mealInput.value = "";
 
 });
 
-
-// ===============================
-// RETO FITNESS
-// ===============================
+/* RETOS */
 
 function generateChallenge(){
 
@@ -335,28 +288,34 @@ function generateChallenge(){
 
 }
 
-
-completeChallengeBtn.addEventListener("click", () => {
+document
+.getElementById("completeChallengeBtn")
+.addEventListener("click", () => {
 
     challengeStatus.innerText =
     "Completado ✅";
 
+    completedChallenges++;
+
+    completedChallengesText.innerText =
+    completedChallenges;
+
 });
 
-
-newChallengeBtn.addEventListener("click", () => {
+document
+.getElementById("newChallengeBtn")
+.addEventListener("click", () => {
 
     generateChallenge();
 
 });
 
-
-// ===============================
-// INICIAR
-// ===============================
+/* INICIAR */
 
 generateChallenge();
 
 updateProgress();
 
-console.log("FitLife AI cargado correctamente 🔥");
+updateWaterVisual();
+
+console.log("🔥 FitLife AI Premium cargado");
