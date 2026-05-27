@@ -94,7 +94,7 @@ document
 .getElementById("startBtn")
 .addEventListener("click", () => {
 
-    alert("🔥 Bienvenido a FitLife AI");
+    alert("🔥 Bienvenido a Q?Fit");
 
 });
 
