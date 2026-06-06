@@ -1,351 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YESEO Cosmetics</title>
 
-    <meta charset="UTF-8">
+<link rel="stylesheet" href="css/estilos.css">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-    <title>Q?Fit</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- GOOGLE FONT -->
-
-    <link rel="preconnect"
-    href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
+<!-- BOTON WHATSAPP -->
+<a href="https://wa.me/573104561639" class="whatsapp" target="_blank">
+    💬
+</a>
 
-    <nav class="navbar">
+<header>
 
-        <div class="logo-container">
+<nav class="navbar">
 
-            <h1 class="logo">
-                Q?Fit
-            </h1>
+<div class="logo">
+    <img src="img/logo.png" alt="YESEO">
+</div>
 
-            <span class="logo-badge">
-               X $1.000 Pesos Mensuales
-            </span>
+<ul class="menu">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#productos">Productos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
 
-        </div>
+</nav>
 
-        <div class="nav-buttons">
+<section id="inicio" class="hero">
 
-            <button id="loginBtn">
-                Login
-            </button>
+<div class="hero-text">
 
-            <button id="darkModeBtn">
-                🌙
-            </button>
+<h1>Tu belleza merece el mejor cuidado</h1>
 
-        </div>
+<p>
+Cosméticos diseñados para hidratar, proteger y resaltar tu bienestar.
+</p>
 
-    </nav>
+<a href="https://wa.me/573104561639" target="_blank" class="btn">
+Solicitar Información
+</a>
 
-    <!-- HERO -->
+</div>
 
-    <section class="hero">
+</section>
 
-        <div class="hero-content">
+</header>
 
-            <h2>
-                Tu Coach Fitness 
-            </h2>
+<section id="nosotros" class="nosotros">
 
-            <p>
-                Controla tu peso, tus calorías, agua, y haz retos fitness
-                con una experiencia premium.
-            </p>
+<h2>Sobre YESEO</h2>
 
-            <button id="startBtn">
-                Comenzar
-            </button>
+<p>
+YESEO Cosmetics es una marca colombiana especializada en el cuidado personal femenino,
+ofreciendo productos de alta calidad elaborados por Lab Vaaro, enfocados en la hidratación,
+bienestar y belleza de la piel.
+</p>
 
-        </div>
+<div class="info">
 
-        <!-- HERO STATS -->
+<div class="card-info">
+<h3>Ubicación</h3>
+<p>Medellín - Colombia</p>
+</div>
 
-        <div class="hero-stats">
+<div class="card-info">
+<h3>INVIMA</h3>
+<p>NSOC46832-26CO</p>
+</div>
 
-            <div class="hero-stat">
+<div class="card-info">
+<h3>Fabricante</h3>
+<p>Lab Vaaro</p>
+</div>
 
-                <h3 id="heroWeight">
-                    92kg
-                </h3>
+</div>
 
-                <span>
-                    Peso Actual
-                </span>
+</section>
 
-            </div>
+<section id="productos" class="productos">
 
-            <div class="hero-stat">
+<h2>Nuestros Productos</h2>
 
-                <h3 id="heroCalories">
-                    1800
-                </h3>
+<div class="grid">
 
-                <span>
-                    Calorías
-                </span>
+<div class="producto">
 
-            </div>
+<img src="img/mantequilla.jpg" alt="Mantequilla Corporal">
 
-            <div class="hero-stat">
+<h3>Mantequilla Corporal</h3>
 
-                <h3 id="heroWater">
-                    2L
-                </h3>
+<p>
+Vitamina E, colágeno y aceite de macadamia.
+Humectación profunda para la piel.
+</p>
 
-                <span>
-                    Agua
-                </span>
+<a href="https://wa.me/573104561639?text=Hola%20quiero%20información%20sobre%20la%20Mantequilla%20Corporal"
+target="_blank"
+class="btn-producto">
+Consultar
+</a>
 
-            </div>
+</div>
 
-        </div>
+<div class="producto">
 
-    </section>
+<img src="img/jabon-intimo.jpg" alt="Jabón Íntimo">
 
-    <!-- DASHBOARD -->
+<h3>Jabón Íntimo</h3>
 
-    <section class="dashboard">
+<p>
+Ácido láctico, caléndula, colágeno y ácido hialurónico.
+</p>
 
-        <!-- PROGRESO -->
+<a href="https://wa.me/573104561639?text=Hola%20quiero%20información%20sobre%20el%20Jabón%20Íntimo"
+target="_blank"
+class="btn-producto">
+Consultar
+</a>
 
-        <div class="card fade-up">
+</div>
 
-            <h3>
-                🔥 Progreso
-            </h3>
+</div>
 
-            <div class="progress-container">
+</section>
 
-                <div id="progressBar"></div>
+<section id="contacto" class="contacto">
 
-            </div>
+<h2>Contáctanos</h2>
 
-            <div class="weight-info">
+<p>
+¿Deseas comprar nuestros productos o ser distribuidor?
+</p>
 
-                <span id="currentWeight">
-                    92 kg
-                </span>
+<a href="https://wa.me/573104561639"
+target="_blank"
+class="btn-contacto">
+Escríbenos por WhatsApp
+</a>
 
-                <span>
-                    Meta: 75 kg
-                </span>
+</section>
 
-            </div>
+<footer>
 
-            <button id="updateWeightBtn">
-                Actualizar Peso
-            </button>
+<p>© 2026 YESEO Cosmetics - Medellín Colombia</p>
 
-        </div>
+</footer>
 
-        <!-- CALORIAS -->
-
-        <div class="card fade-up">
-
-            <h3>
-                🍎 Calorías
-            </h3>
-
-            <div class="big-number"
-            id="caloriesValue">
-
-                1800
-
-            </div>
-
-            <p>
-                Consumidas hoy
-            </p>
-
-            <button id="resetCaloriesBtn">
-                Reiniciar
-            </button>
-
-        </div>
-
-        <!-- AGUA -->
-
-        <div class="card fade-up">
-
-            <h3>
-                💧 Agua
-            </h3>
-
-            <div class="water-circle">
-
-                <div class="water-fill"
-                id="waterFill"></div>
-
-                <div class="water-text"
-                id="waterValue">
-
-                    2L
-
-                </div>
-
-            </div>
-
-            <input
-                type="number"
-                id="waterInput"
-                placeholder="Litros consumidos"
-            >
-
-            <button id="updateWaterBtn">
-                Actualizar Agua
-            </button>
-
-        </div>
-
-        <!-- ESTADISTICAS -->
-
-        <div class="card fade-up">
-
-            <h3>
-                📊 Estadísticas
-            </h3>
-
-            <div class="stats-box">
-
-                <div class="stat-item">
-
-                    <span>
-                        Comidas
-                    </span>
-
-                    <strong id="mealsCount">
-                        0
-                    </strong>
-
-                </div>
-
-                <div class="stat-item">
-
-                    <span>
-                        Retos
-                    </span>
-
-                    <strong id="completedChallenges">
-                        0
-                    </strong>
-
-                </div>
-
-                <div class="stat-item">
-
-                    <span>
-                        Agua
-                    </span>
-
-                    <strong id="waterPercent">
-                        0%
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- COMIDAS -->
-
-    <section class="meals-section">
-
-        <h2>
-            Registro de comidas
-        </h2>
-
-        <div class="meal-form">
-
-            <input
-                type="text"
-                id="mealInput"
-                placeholder="Ejemplo: pollo con arroz"
-            >
-
-            <button id="saveMealBtn">
-                Guardar
-            </button>
-
-        </div>
-
-        <ul id="mealList"></ul>
-
-    </section>
-
-    <!-- RETO FITNESS -->
-
-    <section class="challenge-section">
-
-        <div class="challenge-card">
-
-            <h2>
-                🏆 Reto Fitness
-            </h2>
-
-            <h3 id="challengeText">
-                Cargando...
-            </h3>
-
-            <p id="challengeStatus">
-                Pendiente ❌
-            </p>
-
-            <div class="challenge-buttons">
-
-                <button id="completeChallengeBtn">
-                    Completar
-                </button>
-
-                <button id="newChallengeBtn">
-                    Nuevo
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <h2>
-            Q?Fit
-        </h2>
-
-        <p>
-            Premium Fitness Experience
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
+<script src="js/app.js"></script>
 
 </body>
-
 </html>
