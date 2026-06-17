@@ -6,109 +6,98 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#fff;
-color:#444;
+background:#fafafa;
+color:#333;
 }
 
-header{
-height:100vh;
-background:linear-gradient(
-135deg,
-#f7d7e2,
-#fbc2d9
-);
-display:flex;
-flex-direction:column;
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-padding:20px 8%;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#d65c93;
-}
-
-.btn-nav{
-background:#d65c93;
-color:white;
-padding:12px 20px;
-border-radius:30px;
-text-decoration:none;
-}
+/* HERO */
 
 .hero{
-flex:1;
+height:100vh;
+background:
+linear-gradient(
+135deg,
+rgba(248,214,226,.9),
+rgba(255,255,255,.8)
+),
+url('./img/MANTEQUILLA.png');
+
+background-size:cover;
+background-position:center;
+
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
+}
+
+.overlay{
+max-width:800px;
 padding:20px;
 }
 
+.logo{
+width:180px;
+margin-bottom:20px;
+}
+
 .hero h1{
-font-size:60px;
-max-width:700px;
+font-size:4rem;
+color:#d15d99;
+margin-bottom:15px;
 }
 
 .hero p{
-margin-top:20px;
-font-size:20px;
-max-width:600px;
+font-size:1.2rem;
+margin-bottom:30px;
 }
 
-.btn-principal{
-margin-top:30px;
-background:#d65c93;
-color:white;
+.btn{
+display:inline-block;
 padding:15px 35px;
-border-radius:40px;
+background:#d15d99;
+color:white;
 text-decoration:none;
-font-weight:bold;
+border-radius:50px;
+font-weight:600;
 transition:.3s;
 }
 
-.btn-principal:hover{
-transform:scale(1.05);
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(209,93,153,.4);
 }
 
-section{
-padding:80px 10%;
+/* PRODUCTOS */
+
+.productos{
+padding:90px 8%;
 }
 
-section h2{
+.productos h2{
 text-align:center;
-margin-bottom:40px;
-font-size:40px;
-color:#d65c93;
-}
-
-.about p{
-max-width:900px;
-margin:auto;
-text-align:center;
-line-height:1.8;
+font-size:3rem;
+color:#d15d99;
+margin-bottom:50px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
 }
 
 .card{
 background:white;
-border-radius:20px;
+border-radius:25px;
 overflow:hidden;
-box-shadow:0 5px 25px rgba(0,0,0,.08);
-transition:.3s;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+transition:.4s;
 }
 
 .card:hover{
@@ -117,68 +106,111 @@ transform:translateY(-10px);
 
 .card img{
 width:100%;
-height:350px;
+height:500px;
 object-fit:cover;
+display:block;
 }
 
-.card h3{
-padding:15px;
-color:#d65c93;
-}
-
-.card p{
-padding:0 15px 20px;
-}
-
-.beneficios-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-text-align:center;
-}
-
-.beneficios-grid div{
+.contenido{
 padding:25px;
-background:#fde8f0;
-border-radius:15px;
 }
 
-.cta{
-background:#f8d9e4;
+.contenido h3{
+color:#d15d99;
+font-size:1.5rem;
+margin-bottom:10px;
+}
+
+.contenido p{
+line-height:1.7;
+}
+
+/* CONTACTO */
+
+.contacto{
+padding:100px 20px;
 text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#fce6ef,
+#fff
+);
 }
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:35px;
-color:white;
-text-decoration:none;
-box-shadow:0 4px 15px rgba(0,0,0,.2);
-z-index:1000;
+.contacto h2{
+font-size:2.5rem;
+color:#d15d99;
+margin-bottom:20px;
 }
+
+.contacto p{
+margin-bottom:30px;
+}
+
+.btn-whatsapp{
+display:inline-block;
+padding:18px 40px;
+background:#25D366;
+color:white;
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn-whatsapp:hover{
+transform:scale(1.05);
+}
+
+/* BOTON FLOTANTE */
+
+.float{
+position:fixed;
+width:70px;
+height:70px;
+
+bottom:30px;
+right:30px;
+
+background:#25D366;
+color:white;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:34px;
+
+text-decoration:none;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.25);
+
+z-index:999;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:38px;
+font-size:2.5rem;
 }
 
-.hero p{
-font-size:18px;
+.productos h2{
+font-size:2rem;
 }
 
-section h2{
-font-size:30px;
+.card img{
+height:350px;
+}
+
+.logo{
+width:130px;
 }
 
 }
