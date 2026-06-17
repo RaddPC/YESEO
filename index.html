@@ -4,164 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ye Seo Cosmetics</title>
+<title>YeSeo Cosmetics</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<header>
+<header class="hero">
 
-<nav class="navbar">
+<div class="overlay">
 
-<div class="logo principal.png">
-  <img src="logo principal.png" alt="logo">
-Ye Seo Cosmetics
-</div>
+<img src="./img/logo principal.png" class="logo">
 
-<a
-href="https://wa.me/573104561639"
-class="btn-nav"
-target="_blank">
-Comprar Ahora
-</a>
-
-</nav>
-
-<div class="hero">
-
-<h1>
-Hidratación, Belleza y Confianza
-</h1>
+<h1>YeSeo Cosmetics</h1>
 
 <p>
-Productos diseñados para el cuidado de tu piel,
-tu cabello y tu bienestar diario.
+Hidratación, belleza y confianza en cada aplicación.
 </p>
 
-<a
-href="https://wa.me/573104561639?text=Hola%20quiero%20información%20de%20los%20productos%20Ye%20Seo"
-class="btn-principal"
-target="_blank">
-Solicitar Información
+<a href="#productos" class="btn">
+Ver Productos
 </a>
 
 </div>
 
 </header>
 
-<section class="about">
-
-<h2>Sobre Nosotros</h2>
-
-<p>
-Ye Seo Cosmetics es una marca especializada en
-cuidado corporal, capilar, íntimo y bienestar,
-creada para ofrecer productos de alta calidad
-que realzan la belleza natural.
-</p>
-
-</section>
-
-<section class="productos">
+<section id="productos" class="productos">
 
 <h2>Nuestros Productos</h2>
 
 <div class="grid">
 
 <div class="card">
-  <img src="MANTEQUILA.png" alt="MANTEQUILLA">
-
+<img src="./img/MANTEQUILLA.png" alt="">
+<div class="contenido">
 <h3>Mantequilla Corporal</h3>
-<p>Hidratación profunda y suavidad duradera.</p>
+<p>
+Vitamina E, colágeno y aceite de macadamia para una hidratación profunda.
+</p>
+</div>
 </div>
 
 <div class="card">
-<img src="JABON INTIMO.png">
+<img src="./img/JABON INTIMO.png" alt="">
+<div class="contenido">
 <h3>Jabón Íntimo</h3>
-<p>Protección y equilibrio para el cuidado diario.</p>
+<p>
+Protección, frescura y equilibrio para tu cuidado diario.
+</p>
+</div>
 </div>
 
 <div class="card">
-<img src="SHAMPOO.png">
-<h3>Shampoo Mujer</h3>
-<p>Limpieza suave y brillo natural.</p>
+<img src="./img/SHAMPOO.png" alt="">
+<div class="contenido">
+<h3>Shampoo para Mujer</h3>
+<p>
+Limpieza suave, brillo natural y nutrición para tu cabello.
+</p>
+</div>
 </div>
 
 <div class="card">
-<img src="ACONDICIONA.png">
+<img src="./img/ACONDICIONA.png" alt="">
+<div class="contenido">
 <h3>Acondicionador Mujer</h3>
-<p>Nutrición, suavidad y brillo intenso.</p>
+<p>
+Suavidad, nutrición y brillo intenso con colágeno.
+</p>
+</div>
 </div>
 
 <div class="card">
-<img src="MASCOTAS.png">
+<img src="./img/MASCOTAS.png" alt="">
+<div class="contenido">
 <h3>Shampoo Mascotas</h3>
-<p>Cuidado delicado para perros y gatos.</p>
+<p>
+Limpieza profunda y pelaje saludable para perros y gatos.
+</p>
+</div>
 </div>
 
 </div>
 
 </section>
 
-<section class="beneficios">
+<section class="contacto">
 
-<h2>¿Por qué elegir Ye Seo?</h2>
+<h2>¿Quieres Distribuir Nuestros Productos?</h2>
 
-<div class="beneficios-grid">
-
-<div>
-✨ Ingredientes seleccionados
-</div>
-
-<div>
-💖 Fórmulas enriquecidas
-</div>
-
-<div>
-🌸 Calidad premium
-</div>
-
-<div>
-🚚 Envíos nacionales
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>
-¿Lista para cuidar tu belleza?
-</h2>
+<p>
+Contáctanos y recibe atención personalizada.
+</p>
 
 <a
 href="https://wa.me/573104561639"
-class="btn-principal"
-target="_blank">
-Comprar por WhatsApp
+target="_blank"
+class="btn-whatsapp">
+Hablar por WhatsApp
 </a>
 
 </section>
 
 <a
 href="https://wa.me/573104561639"
-class="whatsapp"
-target="_blank">
+target="_blank"
+class="float">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
-
-<script src="script.js"></script>
 
 </body>
 </html>
