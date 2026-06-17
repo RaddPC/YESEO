@@ -1,10 +1,8 @@
-console.log("YESEO Cosmetics cargado correctamente");
+document.querySelectorAll('a').forEach(link => {
 
-document.querySelectorAll(".btn-producto").forEach(btn => {
+link.addEventListener('click', () => {
 
-btn.addEventListener("click", function(){
-
-console.log("Cliente interesado en producto");
+console.log('Cliente interesado');
 
 });
 
